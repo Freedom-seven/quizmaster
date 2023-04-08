@@ -1,0 +1,38 @@
+.title {
+  text-transform: uppercase;
+  font-size: 4vw;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  filter: drop-shadow(3px 4px 3px #2c2c2c);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+  /* Media query for screens smaller than 768px */
+  .title {
+    font-size: 6vw;
+    filter: drop-shadow(2px 3px 2px #2c2c2c);
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Media query for screens between 768px and 1023px */
+  .title {
+    font-size: 5vw;
+    filter: drop-shadow(3px 4px 3px #2c2c2c);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* Media query for screens larger than 1024px */
+  .title {
+    font-size: 4vw;
+    filter: drop-shadow(3px 4px 3px #2c2c2c);
+  }
+}
