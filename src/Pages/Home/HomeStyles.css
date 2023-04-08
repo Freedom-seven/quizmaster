@@ -1,0 +1,91 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f9fafb;
+}
+
+.settings {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+.settings_select {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  margin-top: 20px;
+}
+
+.settings_select > * {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.settings_select > input {
+  text-align: left;
+}
+
+.settings_select > button {
+  margin-top: 30px;
+  background-color: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings_select > button:hover {
+  background-color: #534dc6;
+}
+
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+  .content {
+    padding: 20px;
+  }
+  .settings {
+    padding: 10px;
+  }
+  .settings_select > * {
+    margin-bottom: 10px;
+  }
+  .settings_select > button {
+    margin-top: 20px;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* For screens between 600px and 900px */
+@media (min-width: 600px) and (max-width: 900px) {
+  .content {
+    flex-direction: column;
+  }
+  .settings {
+    margin-bottom: 20px;
+  }
+}
+
+/* For screens larger than 900px */
+@media (min-width: 900px) {
+  .content {
+    justify-content: space-around;
+  }
+  .settings {
+    margin-right: 20px;
+  }
+}
