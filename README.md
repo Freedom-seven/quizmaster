@@ -39,15 +39,7 @@ React Router: npm install react-router-dom OR yarn add react-router-dom
 
 To use the app, simply fill in your prefered quiz settings and click on the **`Start Quiz`** :arrow_forward: button on the home page to begin. The quiz will consist of multiple-choice questions with randomized answers. Click on **`Quit`** :fast_forward: to stop taking taking the quiz. Or Select your answer and click on **`Next`** :fast_forward: to proceed to the next question. Once the quiz is complete, you will see your **score** and have the option to **restart** the quiz.
 
-### Video
-
-<h4>Video of the app</h4>
-
-<video width="640" height="360" controls>
-  <source src="public/QuizMaster.mp4" type="video/mp4">
-</video>
-
 ### Link
 
-<h4>link to the Quiz Master app</h4>
+<h4>Link to the Quiz Master app</h4>
 The application is hosted at https://quizzmasters.netlify.app/
