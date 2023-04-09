@@ -43,9 +43,11 @@ To use the app, simply fill in your prefered quiz settings and click on the **`S
 
 <h4>Video of the app</h4>
 
-<iframe width="560" height="315" src="public/QuizMaster.mp4" frameborder="0" allowfullscreen></iframe>
+<video width="640" height="360" controls>
+  <source src="public/QuizMaster.mp4" type="video/mp4">
+</video>
 
 ### Link
 
 <h4>link to the Quiz Master app</h4>
-<a>https://quizzmasters.netlify.app/</a>
+The application is hosted at https://quizzmasters.netlify.app/
