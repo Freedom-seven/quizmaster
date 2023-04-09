@@ -35,6 +35,33 @@ API: https://opentdb.com/api.php?amount=10
 
 React Router: npm install react-router-dom OR yarn add react-router-dom
 
+### Run Locally
+
+Here is a step-by-step guide on how to run the project locally using yarn / npm:
+
+Prerequisites: Node.js and npm / yarn should be installed on your system.
+
+<ol>
+<li>Clone the repository from GitHub by running the following command in your terminal:</li>
+
+git clone https://github.com/Freedom-seven/quizmaster.git
+
+<li>Navigate to the project directory by running the following command:</li>
+
+cd quizmaster
+
+<li>Install the project dependencies by running the following command:</li>
+
+yarn / npm install
+
+<li>Once the installation is complete, start the development server by running the following command:</li>
+
+yarn / npm start
+
+<li>Wait for a few seconds, and the application should automatically open in your default web browser at http://localhost:3000/.
+</li>
+</ol>
+
 ### Usage
 
 To use the app, simply fill in your prefered quiz settings and click on the **`Start Quiz`** :arrow_forward: button on the home page to begin. The quiz will consist of multiple-choice questions with randomized answers. Click on **`Quit`** :fast_forward: to stop taking taking the quiz. Or Select your answer and click on **`Next`** :fast_forward: to proceed to the next question. Once the quiz is complete, you will see your **score** and have the option to **restart** the quiz.
