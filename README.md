@@ -35,7 +35,7 @@ API: https://opentdb.com/api.php?amount=10
 
 React Router: npm install react-router-dom OR yarn add react-router-dom
 
-### Run Locally
+### How to Run Locally
 
 Here is a step-by-step guide on how to run the project locally using yarn / npm:
 
