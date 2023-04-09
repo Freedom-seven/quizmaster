@@ -31,7 +31,7 @@ const Result = ({ name, score, questions }) => {
         variant="contained"
         style={{ alignSelf: "center", margin: 30 }}
       >
-        Back to Home
+        Restart
       </Button>
     </div>
   );
