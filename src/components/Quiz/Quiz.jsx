@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { decode } from "html-entities";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +16,7 @@ const Quiz = ({
 }) => {
   const [selected, setSelected] = useState(null);
   const [error, setError] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(60);
 
   const navigate = useNavigate();
   const max_question = questions.length;
@@ -41,13 +42,25 @@ const Quiz = ({
   const handleNext = () => {
     if (currentQuestion >= max_question - 1) {
       navigate("/result");
-    } else if (selected) {
+    } else if (selected || timeLeft === 0) {
       setCurrentQuestion(currentQuestion + 1);
-      setSelected("");
+      setSelected(null);
+      setError(false);
+      setTimeLeft(60);
     } else {
       setError(true);
     }
   };
+
+  useEffect(() => {
+    if (timeLeft === 0) {
+      setSelected(null);
+      setError(true);
+    }
+    const timer =
+      timeLeft > 0 && setInterval(() => setTimeLeft(timeLeft - 1), 1000);
+    return () => clearInterval(timer);
+  }, [timeLeft]);
 
   return (
     <div className="question">
@@ -56,13 +69,20 @@ const Quiz = ({
           {questions[currentQuestion].category}
         </span>
         <span className="score-info">Score: {score}</span>
+        {timeLeft ? (
+          <span className="time-info">Time: {timeLeft}</span>
+        ) : (
+          <span className="time-info">Time's up!</span>
+        )}
       </div>
       <h3>Question {currentQuestion + 1}</h3>
       <div className="current-quiz">
         <p>{decode(questions[currentQuestion].question)}</p>
 
         <div className="options">
-          {error && <ErrorMessage>Please select an anwser</ErrorMessage>}
+          {error && timeLeft > 0 && !selected && (
+            <ErrorMessage>Please select an answer</ErrorMessage>
+          )}
 
           {options &&
             options.map((option) => (
@@ -72,7 +92,7 @@ const Quiz = ({
                   selected && getOptionClass(option)
                 }`}
                 onClick={() => handleCheck(option)}
-                disabled={selected}
+                disabled={selected !== null || timeLeft === 0}
               >
                 {decode(option)}
               </button>
