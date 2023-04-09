@@ -31,7 +31,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App" style={{ backgroundColor: "#f9fafb" }}>
+      <div className="App">
         <Header />
         <Routes>
           <Route

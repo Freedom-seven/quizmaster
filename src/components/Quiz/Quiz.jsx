@@ -17,6 +17,7 @@ const Quiz = ({
   const [selected, setSelected] = useState(null);
   const [error, setError] = useState(false);
   const [timeLeft, setTimeLeft] = useState(60);
+  const [timerId, setTimerId] = useState(null);
 
   const navigate = useNavigate();
   const max_question = questions.length;
@@ -28,6 +29,7 @@ const Quiz = ({
   };
 
   const handleCheck = (option) => {
+    clearInterval(timerId); // clear the interval of the timer
     setSelected(option);
     if (option === correct) {
       setScore((prevScore) => prevScore + 1);
@@ -57,9 +59,10 @@ const Quiz = ({
       setSelected(null);
       setError(true);
     }
-    const timer =
+    const id =
       timeLeft > 0 && setInterval(() => setTimeLeft(timeLeft - 1), 1000);
-    return () => clearInterval(timer);
+    setTimerId(id);
+    return () => clearInterval(id);
   }, [timeLeft]);
 
   return (

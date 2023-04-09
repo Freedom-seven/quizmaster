@@ -19,5 +19,6 @@ a {
 }
 .App {
   min-height: 98.5vh;
-  padding: 5px; /*inside padding */
+  padding: 5px;
+  background-color: #f9fafb;
 }
