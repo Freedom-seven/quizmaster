@@ -22,9 +22,7 @@ const Result = ({ name, score, questions }) => {
         <h3>
           {score > averageScore ? "Well done" : "Not too bad"}, {name}
         </h3>
-        <span className="score-info">
-          You scored {score} out of {questions.length} questions.
-        </span>
+        <span className="score-info">You scored {score}</span>
       </div>
       <Button
         href="/"
@@ -33,7 +31,7 @@ const Result = ({ name, score, questions }) => {
         variant="contained"
         style={{ alignSelf: "center", margin: 30 }}
       >
-        Back to Homepage
+        Back to Home
       </Button>
     </div>
   );
