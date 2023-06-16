@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Home, QuizPage, Result } from "./Pages";
@@ -6,10 +6,10 @@ import Header from "./components/Header/Header";
 
 function App() {
   const [name, setName] = useState("");
-  const [questions, setQuestions] = useState();
+  const [questions, setQuestions] = useState([]);
   const [score, setScore] = useState(0);
 
-  async function fetchQuestions(category, difficulty) {
+  const fetchQuestions = async (category, difficulty) => {
     try {
       const response = await fetch(
         `https://opentdb.com/api.php?amount=15${
@@ -27,7 +27,11 @@ function App() {
     } catch (error) {
       console.error("Error fetching questions:", error);
     }
-  }
+  };
+
+  useEffect(() => {
+    fetchQuestions();
+  }, []);
 
   return (
     <BrowserRouter>
